@@ -1,2 +1,18 @@
+# Data & heavy artifacts
+data/
+val/data/
+models/
+val/models/
+outputs/
+val/outputs/
 
-.DS_Store
+# Common heavy files
+*.pkl
+*.npy
+*.npz
+*.pt
+*.bin
+*.csv
+
+# Jupyter
+.ipynb_checkpoints/
