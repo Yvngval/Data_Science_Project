@@ -1,0 +1,28 @@
+.DS_Store
+Thumbs.db
+
+# Markdown files
+*.md
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Modèles et caches lourds
+models/corpus_embeddings.npy
+models/*.pkl
+
+# Données (à télécharger via Kaggle)
+data/*.json
+data/*.csv
+data/*.pkl
+
+# Sorties
+outputs/
