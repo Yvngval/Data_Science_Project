@@ -95,4 +95,4 @@ Les données, les index et les embeddings (≈ 1,7 Go) ne sont pas versionnés.
 ## Stack
 
 Python · pandas · NumPy · scikit-learn · rank-bm25 · sentence-transformers · NLTK · UMAP · matplotlib / seaborn · Jupyter
-# Data_Science_Project
+
