@@ -1,0 +1,69 @@
+RAPPORT PROJET - Dossier val
+
+1) Vue d'ensemble
+Ce dossier correspond a un projet de data science oriente recherche d'information
+et classification de requetes. Il contient des donnees JSON, des notebooks
+d'exploration/feature engineering, des artefacts de modeles (TF-IDF, BM25,
+embeddings) et des sorties de resultats/visualisations. Un script Python
+permet d'entrainer un modele TF-IDF + regression logistique et de produire
+un fichier de soumission.
+
+2) Arborescence principale
+- data/
+  Donnees brutes et pretraitees (JSON/PKL/CSV). Principaux fichiers:
+  * queries_train.json / queries_test.json : requetes et categories.
+  * documents.json / docs.json : corpus de documents.
+  * qgts_train.json / gts.json : paires ou jeux de reference.
+  * df_docs_preprocessed.pkl : version pretraitee du corpus.
+  * submission.csv : gabarit de soumission.
+
+- models/
+  Artefacts de modeles/representations:
+  * tfidf_vectorizer.pkl, tfidf_matrix.pkl : vectorisation TF-IDF.
+  * bm25_index.pkl : index BM25.
+  * corpus_embeddings.npy : embeddings du corpus.
+
+- notebooks/
+  Notebooks d'analyse et de modelisation:
+  * 01_eda.ipynb : exploration des donnees.
+  * 02_tfidf.ipynb : modele TF-IDF.
+  * 03_bm25.ipynb : BM25 pour la recherche.
+  * 04_embeddings.ipynb : embeddings et similarite.
+  * 05_baseline_results.ipynb : comparaison des baselines.
+
+- outputs/
+  Resultats et figures:
+  * *_results.pkl : metriques/resultats par methode.
+  * *.png : distributions et visualisations (TSNE/UMAP, top words, etc.).
+  * 92iemj.csv : exemple de sortie.
+
+- predict_category.py
+  Script principal de prediction de categories (classification).
+
+3) Script principal (predict_category.py)
+- Charge les requetes d'entrainement et de test depuis data/.
+- Construit un texte par requete (text + title + tags).
+- Vectorise via TF-IDF (ngrams 1-2, stop_words anglais).
+- Entraine un LogisticRegression, evalue sur un split validation.
+- Re-entraîne sur tout l'entrainement puis predit le test.
+- Met a jour le fichier outputs/Team_92i_ElMorjen.csv (gabarit de soumission).
+
+4) Methodes utilisees
+- TF-IDF + regression logistique pour la classification des requetes.
+- BM25 et embeddings pour la recherche d'information (notebooks + artefacts).
+- Comparaison de baselines et visualisations d'analyse.
+
+5) Sorties attendues
+- Metriques de validation affichees dans la console (accuracy, macro F1).
+- Fichier de soumission mis a jour dans outputs/Team_92i_ElMorjen.csv.
+- Figures et resultats sauvegardes dans outputs/.
+
+6) Execution rapide (indicatif)
+- Depuis le dossier val:
+  python predict_category.py
+
+7) Points a noter
+- Les artefacts dans models/ et outputs/ sont generes par les notebooks/scripts.
+- Les notebooks servent a l'analyse et a la comparaison des methodes.
+
+Fin du rapport.

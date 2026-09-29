@@ -1,1 +1,29 @@
 .DS_Store
+Thumbs.db
+
+# Archives
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+env/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+**/notebooks/*_kaggle.ipynb
+
+# Données (à télécharger via Kaggle)
+**/data/*.json
+**/data/*.csv
+**/data/*.pkl
+
+# Modèles et caches lourds
+**/models/*.npy
+**/models/*.pkl
+
+# Local
+.claude/
